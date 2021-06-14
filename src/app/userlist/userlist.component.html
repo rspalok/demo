@@ -1,0 +1,26 @@
+<p>userlist works!</p> 
+ 
+
+<table class="table">
+    <thead>
+      <span><button (click)="addUser()"> Add User</button></span>
+      <tr>
+        <th>Name</th>
+        <th>UserName</th>  
+        <th>Email</th>
+        <th>Address</th>
+        <th>Co Ordinate </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let todo of users">
+      <td>{{todo.name}}</td>
+      <td>{{todo.username}}</td>  
+      <td>{{todo.email}}</td>  
+      <td>{{todo.address.street}} {{todo.address.suite}} {{todo.address.city}}</td>  
+        <td>{{todo.address.geo.lat}} {{todo.address.geo.lng}}
+           </td>
+      </tr>
+     
+    </tbody>
+  </table>

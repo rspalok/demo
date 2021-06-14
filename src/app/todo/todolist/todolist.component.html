@@ -1,0 +1,30 @@
+<p>todolist works!</p> 
+<form>
+    <div class="form-group">
+        <label for="username">New Task:  </label>
+        <input type="text" name="task" class="form-control" >
+      </div>
+      <div class="checkbox">
+        <label><input value=true type="checkbox"> Complited</label>
+      </div>
+      <button class="btn btn-default" (click)=newTodo()>Login</button>
+
+</form>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th>Task</th>
+        <th>Status</th>  
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let todo of todoList">
+        <td>{{todo.task}}</td>
+        <td>{{todo.status}}</td>  
+        <td><button class="button" (click)="complite(todo)"> Mark Complite</button></td>
+      </tr>
+     
+    </tbody>
+  </table>

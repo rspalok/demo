@@ -1,0 +1,25 @@
+<p>inventory works!</p> 
+<table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Category</th>
+        <th>price</th>
+        <th>Image</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of productList, let i=index;">
+        <td>{{product.name}}</td>
+        <td>{{product.category}}</td>
+        <td>{{product.price}}</td>
+        <td><img [src]= "product.imgPath" > </td> 
+        <!-- [price]="product.price" custom property binding -->
+        <!-- (update)="setNewPrice()" custom event binding -->
+        <td>  <app-priceupdater [price]="product.price" (update)="setNewPrice($event,i)"></app-priceupdater></td>
+        <td><button class="button" (click)="delete(i)"> Delete</button></td>
+      </tr>
+     
+    </tbody>
+  </table>

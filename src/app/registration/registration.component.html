@@ -1,0 +1,124 @@
+<p>registration works!</p>
+<div>
+    <div>
+      <!-- <form>
+          <fieldset>
+            <legend>SignUp</legend>   -->  
+                <!-- Name Block -->
+               <!-- <div class="form-group">
+                <div *ngIf="name.invalid && name.touched"> Name is required </div>
+                <label for="inputName">Name </label>
+                <input type="text" #name="ngModel" ngModel
+                  id="inputName" 
+                  placeholder="Name" name="name" required>       
+              </div>  -->  
+              <!-- Email Block -->
+              <!--<div class="form-group">
+                <div *ngIf="email.invalid && email.dirty"> Email is required </div>
+                <label for="inputEmail">Email </label>
+                <input type="text" #email="ngModel" ngModel
+                  id="inputEmail" 
+                  placeholder="Email" name="email" required>       
+              </div>-->
+  
+              <!-- Password Block -->
+             <!-- <div>
+              <div class="form-group">
+                <div *ngIf="pwd.invalid && pwd.dirty">  
+                    <span *ngIf="pwd.errors?.required"> Password is required field </span>
+                    <span *ngIf="pwd.errors?.minlength"> Password is 6 charector </span>
+                    <span *ngIf="pwd.errors?.dirty"> Password is invalid </span>
+                </div>
+                <label for="inputPassword">Password * </label>
+                <input type="password" #pwd="ngModel" ngModel
+                  id="inputPassword"  minlength="6"
+                  placeholder="Password" name="password" required>
+              </div>         
+            </div> -->        
+             <!-- Buttons Block -->
+            <!--  <div class="form-group">
+                <label></label>  
+                <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="reset" class="btn btn-default">Cancel</button>
+                </div>
+          </fieldset>
+      </form> -->
+      <form #myForm="ngForm"  (ngSubmit)="ragister(myForm.value)">
+        <fieldset>
+          <legend>SignUp</legend>     
+              <!-- Name Block -->
+              <div class="form-group">
+              <div *ngIf="name.invalid && name.touched"> Name is required </div>
+              <label for="inputName">Name </label>
+              <input type="text" #name="ngModel" ngModel
+                id="inputName" 
+                placeholder="Name" name="name" required>       
+            </div>    
+            <!-- Email Block -->
+            <div class="form-group">
+              <div *ngIf="email.invalid && email.dirty"> Email is required </div>
+              <label for="inputEmail">Email </label>
+              <input type="text" #email="ngModel" ngModel
+                id="inputEmail" 
+                placeholder="Email" name="email" required>       
+            </div>
+
+            <!-- Password Block -->
+            <div>
+            <div class="form-group">
+              <div *ngIf="pwd.invalid && pwd.dirty">  
+                  <span *ngIf="pwd.errors?.required"> Password is required field </span>
+                  <span *ngIf="pwd.errors?.minlength"> Password is 6 charector </span>
+                  <span *ngIf="pwd.errors?.dirty"> Password is invalid </span>
+              </div>
+              <label for="inputPassword">Password * </label>
+              <input type="password" #pwd="ngModel" ngModel
+                id="inputPassword"  minlength="6"
+                placeholder="Password" name="password" required>
+            </div>         
+          </div>         
+           <!-- Buttons Block -->
+            <div class="form-group">
+              <label></label>  
+              <button type="submit" class="btn btn-primary" [disabled]="myForm.invalid" >Submit</button>
+                <button type="reset" class="btn btn-default">Cancel</button>
+              </div>
+        </fieldset>
+    </form>    
+    </div>
+    <p>//validation defaulth html
+        required
+        minlenght
+        maxlenth
+        pattern for specific pattern 
+        // angular way
+
+
+        two way of 2 way data binding 
+        1 ngModel
+        2 form validation
+        <br>
+        property 
+        .valid
+        .invalid
+        .dirty
+        .pristine(clean state)
+        .touched --change will reflect on blur 
+        .untouched
+        <br>
+        .error Object
+        .required
+        .minlenght
+        .maxlenth
+        .pattern
+        <br>
+        ngForm
+
+        templet driven form ----- ng ngModel
+        reactive form ----good for unit test, more control, more cutomization , custum validation
+
+        unit test is complily diffrent <br>
+
+        jasmin and karma :- is test runner,  report, watch file and re-run, test shuit
+    </p>
+  </div>
